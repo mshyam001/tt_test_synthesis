@@ -1,4 +1,4 @@
-module pwm (
+module tt_um_pwm (
     input  wire        clk_i,        // Clock
     input  wire        res_ni,       // Active-low reset
     input  wire [7:0]  set_thres_i,  // Asynchronous Set threshold (sampled/synced)
