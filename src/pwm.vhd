@@ -4,7 +4,7 @@ use IEEE.numeric_std.all;
 
 entity pwm is
 	port (
-    	clk_i       : in std_ulogic;              -- Clock input
+    	clk_i       : in std_ulogic;              -- Clock input 
     	res_ni      : in std_ulogic;              -- Reset (active-low)
 	set_thres_i : in unsigned(7 downto 0);   -- Asynchronous Set threshold
 	clr_thres_i : in unsigned(7 downto 0);   -- Asynchronous Clear threshold
