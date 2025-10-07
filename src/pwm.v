@@ -5,7 +5,7 @@ module tt_um_pwm (
     input  wire [7:0]  clr_thres_i,  // Asynchronous Clear threshold (sampled/synced)
     input  wire [7:0]  reload_i,     // Asynchronous Reload value (sampled/synced)
     output reg         pwm_o         // PWM output
-);
+); 
 
     // Counter
     reg [7:0] cnt;
