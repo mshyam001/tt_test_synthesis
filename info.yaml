@@ -1,6 +1,6 @@
 # Tiny Tapeout project information
 project:
-  title:        "pwm"      # Project title
+  title:        "tt_um_pwm"      # Project title
   author:       "shyam sunder mandapally"      # Your name
   discord:      ""      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
   description:  "PWM generator"      # One line description of what your project does
