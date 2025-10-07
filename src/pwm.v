@@ -1,5 +1,5 @@
 module tt_um_ms_pw (
-    input  wire        ena,
+    input  wire        ena, rst_n
     input  wire        clk,        // Clock
     input  wire        res_ni,       // Active-low reset
     input  wire [7:0]  set_thres_i,  // Asynchronous Set threshold (sampled/synced)
