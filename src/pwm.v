@@ -1,5 +1,5 @@
 module tt_um_pwm (
-    input  wire        clk_i,        // Clock
+    input  wire        clk,        // Clock
     input  wire        res_ni,       // Active-low reset
     input  wire [7:0]  set_thres_i,  // Asynchronous Set threshold (sampled/synced)
     input  wire [7:0]  clr_thres_i,  // Asynchronous Clear threshold (sampled/synced)
@@ -18,7 +18,7 @@ module tt_um_pwm (
     // ------------------------------------------------------------
     // Synchronize inputs to clk_i domain (single-stage, like VHDL)
     // ------------------------------------------------------------
-    always @(posedge clk_i or negedge res_ni) begin
+    always @(posedge clk or negedge res_ni) begin
         if (!res_ni) begin
             set_thres_sync <= 8'd0;
             clr_thres_sync <= 8'd0;
@@ -33,7 +33,7 @@ module tt_um_pwm (
     // ------------------------------------------------------------
     // 8-bit counter with synchronous reload to 0
     // ------------------------------------------------------------
-    always @(posedge clk_i or negedge res_ni) begin
+    always @(posedge clk or negedge res_ni) begin
         if (!res_ni) begin
             cnt <= 8'd0;
         end else begin
@@ -47,7 +47,7 @@ module tt_um_pwm (
     // ------------------------------------------------------------
     // PWM set/clear with clear priority (matches VHDL ordering)
     // ------------------------------------------------------------
-    always @(posedge clk_i or negedge res_ni) begin
+    always @(posedge clk or negedge res_ni) begin
         if (!res_ni) begin
             pwm_o <= 1'b0;
         end else begin
